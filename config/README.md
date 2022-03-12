@@ -43,6 +43,6 @@ For the love of split keyboards.
 
 ## Build Commands for Frost :)
 ```
-west build -d build/right -p -b nice_nano_v2 -- -DSHIELD=leeloo_right -DZMK_CONFIG="C:\zmk\frost\leeloo\config"
-west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=leeloo_left -DZMK_CONFIG="C:\zmk\frost\leeloo\config"
+west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=leeloo_left -DZMK_CONFIG="/workspaces/config/leeloo/config"
+west build -d build/right -p -b nice_nano_v2 -- -DSHIELD=leeloo_right -DZMK_CONFIG="/workspaces/config/leeloo/config"
 ```
