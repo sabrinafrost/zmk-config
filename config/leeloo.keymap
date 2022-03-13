@@ -7,25 +7,11 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 
-#define LKESC   LG(LC(Q)) ESC
-#define LSCPS   LSHFT CAPS
-#define HYP     RS(RC(RA(RGUI)))
-#define LSTAB   LS(TAB)
-#define ALFD    RG(SPACE)
-
-#define BT_0     BT_SEL 0
-#define BT_1     BT_SEL 1
-#define BT_2     BT_SEL 2
-#define BT_3     BT_SEL 3
-#define BT_4     BT_SEL 4
-
-#define VOL_UP  C_VOL_UP
-#define VOL_DN  C_VOL_DN
-#define MUTE   K_MUTE
-
-#define VCC_TOG &ext_power EP_TOG
+#define LOCK     LG(LC(Q))
+#define HYPER    RS(RC(RA(RGUI)))
+#define BACKTAB  &(TAB)
+#define ALFRED   RG(SPACE)
 
 /*
  * If you want to add encoder support later, add the following to each layer definition:
@@ -35,43 +21,43 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-        main_layer {
+        dvorak {
             bindings = <
-&mt LKESC &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp BSPC
-&kp TAB   &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y                            &kp F      &kp G      &kp C      &kp R      &kp L      &kp BSLH
-&mt LSCPS &kp A      &kp O      &kp E      &kp U      &kp I                            &kp D      &kp H      &kp T      &kp N      &kp S      &kp RET
-&mt LSCPS &kp SEMI   &kp Q      &kp J      &kp K      &kp X                            &kp B      &kp M      &kp W      &kp V      &kp Z      &tog 3
-                     &kp LCTRL  &kp LALT   &kp LGUI   &kp SPACE &lt 2 C_PP    &kp HYP  &kp RET    &lt 1 ALFD &kp LBKT   &kp RBKT
-            >;
-        };
-
-        sym_nav_layer {
-            bindings = <
-&kp GRAVE  &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &kp LPAR   &kp RPAR  &kp DEL
-&kp LSTAB  &kp DQT    &kp LT     &kp GT     &trans     &trans                           &trans     &trans     &kp UP     &kp LBKT   &kp RBKT  &kp FSLH
-&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &trans    &kp EQUAL
-&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans    &kp MINUS
-                      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
-            >;
-        };
-
-        special_layer {
-            bindings = <
-&bt BT_CLR &bt BT_0   &bt BT_1   &bt BT_2   &bt BT_3   &bt BT_4                         &trans     &trans     &trans     &trans     &trans    &trans
-&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &kp VOL_UP &trans     &trans    &trans
-&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &kp C_PREV &kp VOL_DN &kp C_NEXT &trans    &trans
-&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &kp MUTE  &trans     &trans    &trans
-                      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
-            >;
-        };
-
-        gaming_numpad_layer {
-            bindings = <
-&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans       &trans
-&trans     &kp Q      &kp W      &kp E      &kp R      &kp T                            &trans     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS  &trans
-&trans     &kp A      &kp S      &kp D      &kp F      &kp G                            &trans     &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS &trans
-&trans     &kp Z      &kp X      &kp C      &kp V      &kp B                            &trans     &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL &tog 3
-                      &kp LALT   &kp LGUI   &trans     &trans     &trans     &trans     &trans     &trans     &kp KP_N0  &kp DOT
+                   &mt LOCK ESC &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BSPC
+                   &kp TAB      &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y                                         &kp F         &kp G         &kp C         &kp R         &kp L         &kp BSLH
+                   &kp LSHFT    &kp A         &kp O         &kp E         &kp U         &kp I                                         &kp D         &kp H         &kp T         &kp N         &kp S         &kp RET
+                   &none        &kp SEMI      &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &tog 3
+                                              &kp LCTRL     &kp LALT      &kp LGUI      &kp SPACE     &lt 2 C_PP         &kp C_NEXT   &kp HYPER     &lt 1 ALFRED  &kp LBKT      &kp RBKT
+            >;          
+        };          
+          
+        symbols_and_navigation {          
+            bindings = <          
+                   &kp GRAVE     &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &kp LPAR      &kp RPAR     &kp DEL
+                   &kp BACKTAB   &kp DQT       &kp LT        &kp GT        &trans        &trans                                        &trans        &trans        &kp UP        &kp LBKT      &kp RBKT     &kp FSLH
+                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &trans       &kp EQUAL
+                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &kp MINUS
+                                               &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
+            >;          
+        };          
+          
+        media_and_bluetooth {          
+            bindings = <          
+                   &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                  &trans        &trans        &trans        &trans        &trans       &trans
+                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp C_VOL_UP  &trans        &trans       &trans
+                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp C_PREV    &kp C_VOL_DN  &kp C_NEXT    &trans       &trans
+                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp K_MUTE    &trans        &trans       &trans
+                                               &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
+            >;          
+        };          
+          
+        gaming_and_numpad {          
+            bindings = <          
+                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans          &trans
+                   &trans        &kp Q         &kp W         &kp E         &kp R         &kp T                                         &trans        &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_PLUS     &trans
+                   &trans        &kp A         &kp S         &kp D         &kp F         &kp G                                         &trans        &kp KP_N4     &kp KP_N5     &kp KP_N6     &kp KP_MINUS    &trans
+                   &trans        &kp Z         &kp X         &kp C         &kp V         &kp B                                         &trans        &kp KP_N1     &kp KP_N2     &kp KP_N3     &kp KP_EQUAL    &tog 3
+                                               &kp LALT      &kp LGUI      &trans        &trans        &trans            &trans        &trans        &trans        &kp KP_N0     &kp DOT
             >;
         };
     };
