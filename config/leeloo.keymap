@@ -7,11 +7,14 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 
-#define LOCK     LG(LC(Q))
-#define HYPER    RS(RC(RA(RGUI)))
-#define BACKTAB  LS(TAB)
-#define ALFRED   RG(SPACE)
+#define LOCK      LG(LC(Q))
+#define HYPER     RS(RC(RA(RGUI)))
+#define BACKTAB   LS(TAB)
+#define ALFRED    RG(SPACE)
+#define UPPERCASE RS(RC(RA(RGUI(UP))))
+#define LOWERCASE RS(RC(RA(RGUI(DOWN))))
 
 /*
  * If you want to add encoder support later, add the following to each layer definition:
@@ -35,9 +38,9 @@
         symbols_and_navigation {
             bindings = <          
                    &kp GRAVE     &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &kp LBKT      &kp RBKT     &kp DEL
-                   &kp BACKTAB   &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp FSLH      &kp EQUAL    &trans
-                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
-                   &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
+                   &kp BACKTAB   &kp LPAR      &kp UPPERCASE &kp RPAR      &trans        &trans                                        &trans        &trans        &kp UP        &kp FSLH      &kp EQUAL    &trans
+                   &trans        &kp LBKT      &kp LOWERCASE &kp RBKT      &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
+                   &trans        &kp LBRC      &kp UNDER     &kp RBRC      &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
                                                &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
             >;
         };
@@ -48,7 +51,7 @@
                    &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp C_VOL_UP  &trans        &trans       &trans
                    &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp C_PREV    &kp C_VOL_DN  &kp C_NEXT    &trans       &trans
                    &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp K_MUTE    &trans        &trans       &trans
-                                               &trans        &trans        &trans        &trans        &trans            &tog 3        &trans        &trans        &trans        &trans
+                                               &trans        &trans        &trans        &trans        &trans        &ext_power EP_TOG &ext_power EP_ON &ext_power EP_OFF        &trans        &trans
             >;
         };
 
