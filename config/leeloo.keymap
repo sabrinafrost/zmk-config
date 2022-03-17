@@ -10,11 +10,11 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define LOCK      LG(LC(Q))
-#define HYPER     RS(RC(RA(RGUI)))
+#define HYPER     LS(LC(LA(LGUI)))
 #define BACKTAB   LS(TAB)
-#define ALFRED    RG(SPACE)
-#define UPPERCASE RS(RC(RA(RGUI(UP))))
-#define LOWERCASE RS(RC(RA(RGUI(DOWN))))
+#define ALFRED    LG(SPACE)
+#define UPPERCASE LS(LC(LA(LG(UP))))
+#define LOWERCASE LS(LC(LA(LG(DOWN))))
 
 /*
  * If you want to add encoder support later, add the following to each layer definition:
