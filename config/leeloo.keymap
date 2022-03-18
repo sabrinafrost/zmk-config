@@ -38,20 +38,24 @@
         symbols_and_navigation {
             bindings = <          
                    &kp GRAVE     &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &kp LBKT      &kp RBKT     &kp DEL
-                   &kp BACKTAB   &kp LPAR      &kp UPPERCASE &kp RPAR      &trans        &trans                                        &trans        &trans        &kp UP        &kp FSLH      &kp EQUAL    &trans
-                   &trans        &kp LBKT      &kp LOWERCASE &kp RBKT      &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
-                   &trans        &kp LBRC      &kp UNDER     &kp RBRC      &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
+                   &kp BACKTAB   &trans        &kp LPAR      &kp UPPERCASE &kp RPAR      &trans                                        &trans        &trans        &kp UP        &kp FSLH      &kp EQUAL    &trans
+                   &trans        &trans        &kp LBKT      &kp LOWERCASE &kp RBKT      &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
+                   &trans        &trans        &kp LBRC      &kp UNDER     &kp RBRC      &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
                                                &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
             >;
         };
 
+        /*
+         * &ext_power EP_OFF will turn the OLEDs off but due to a known issue, they won't come back online without a quick press of the reset buttons
+         * See https://github.com/zmkfirmware/zmk/issues/674
+         */
         media_and_bluetooth {
             bindings = <          
-                   &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                  &trans        &trans        &trans        &trans        &trans       &trans
+                   &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                  &trans        &trans        &trans        &trans        &trans       &ext_power EP_OFF
                    &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp C_VOL_UP  &trans        &trans       &trans
                    &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp C_PREV    &kp C_VOL_DN  &kp C_NEXT    &trans       &trans
                    &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp K_MUTE    &trans        &trans       &trans
-                                               &trans        &trans        &trans        &trans        &trans        &ext_power EP_TOG &ext_power EP_ON &ext_power EP_OFF        &trans        &trans
+                                               &trans        &trans        &trans        &trans        &trans            &tog 3        &trans        &trans        &trans        &trans
             >;
         };
 
