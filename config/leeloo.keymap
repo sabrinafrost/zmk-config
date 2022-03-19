@@ -38,7 +38,7 @@
         symbols_and_navigation {
             bindings = <          
                    &kp GRAVE     &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &kp LBKT      &kp RBKT     &kp DEL
-                   &kp BACKTAB   &trans        &kp LPAR      &kp UPPERCASE &kp RPAR      &trans                                        &trans        &trans        &kp UP        &kp FSLH      &kp EQUAL    &trans
+                   &kp BACKTAB   &trans        &kp LPAR      &kp UPPERCASE &kp RPAR      &trans                                        &trans        &trans        &kp UP        &kp FSLH      &kp EQUAL    &kp UNDER
                    &trans        &trans        &kp LBKT      &kp LOWERCASE &kp RBKT      &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
                    &trans        &trans        &kp LBRC      &kp UNDER     &kp RBRC      &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
                                                &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans
