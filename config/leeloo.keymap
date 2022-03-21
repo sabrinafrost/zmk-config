@@ -47,7 +47,7 @@
             bindings = <&kp L>, <&kp EQUAL>, <&kp PLUS>;
         };
 
-        tds: tap_dance_s {
+        tds: tds {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_S";
             #binding-cells = <0>;
