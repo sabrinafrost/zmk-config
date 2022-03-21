@@ -6,8 +6,12 @@ manifest:
       url-base: https://github.com/ClicketySplit
   projects:
     - name: zmk
-      remote: ClicketySplit
-      revision: inaugural_branch
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
+    # - name: zmk
+    #   remote: ClicketySplit
+    #   revision: inaugural_branch
+    #   import: app/west.yml
   self:
     path: config

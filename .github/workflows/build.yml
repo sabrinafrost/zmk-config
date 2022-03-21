@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:stable
+      image: zmkfirmware/zmk-dev-arm:stable
     needs: matrix
     name: Build
     strategy:
@@ -68,6 +68,13 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
+      # This is to keep updated with the main repository and can be removed when the Leeloo changes are merged
+      - name: Patch Leeloo Repository
+        working-directory: ./zephyr
+        run: |
+          git fetch origin pull/1165/head:leeloo
+          git format-patch leeloo --stdout > leeloo.patch
+          git am leeloo.patch
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
