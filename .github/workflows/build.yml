@@ -72,6 +72,7 @@ jobs:
       - name: Patch Leeloo Repository
         working-directory: ./zephyr
         run: |
+          git remote add origin https://github.com/ClicketySplit/zmk
           git fetch origin pull/1165/head:leeloo
           git format-patch leeloo --stdout > leeloo.patch
           git am leeloo.patch
