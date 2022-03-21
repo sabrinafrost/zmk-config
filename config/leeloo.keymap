@@ -52,7 +52,7 @@
             label = "TAP_DANCE_S";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp S>, <&kp MINUS>;
+            bindings = <&kp LC(LS(K))>, <&kp LC(LS(N))>;
         };
     };
 
