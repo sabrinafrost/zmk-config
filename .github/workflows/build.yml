@@ -73,8 +73,8 @@ jobs:
         working-directory: ./zephyr
         run: |
           git remote add origin https://github.com/ClicketySplit/zmk
-          git fetch origin pull/1165/head:leeloo
-          git format-patch leeloo --stdout > leeloo.patch
+          git fetch origin
+          git format-patch inaugural_branch --stdout > leeloo.patch
           git am leeloo.patch
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
