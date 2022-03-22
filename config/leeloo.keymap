@@ -12,7 +12,7 @@
 #define TAPPING_TERM 175
 
 // The launcher key triggers Alfred when pressed, and switches layers when held
-#define LAUNCHER    &mt &sl 1 LG(SPACE)
+#define LAUNCHER    &lt 1 LG(SPACE)
 
 // Friendlier modifier definitions because the OCD gods demand it
 #define COMMAND     &kp LGUI
