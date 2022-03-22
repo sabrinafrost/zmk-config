@@ -9,16 +9,16 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define TAPPING_TERM 100
+#define TAPPING_TERM 175
 
 // The launcher key triggers Alfred when pressed, and switches layers when held
-#define LAUNCHER &lt 1 LG(SPACE)
+#define LAUNCHER    &lt 1 LG(SPACE)
 
 // Friendlier modifier definitions because the OCD gods demand it
-#define COMMAND &kp LGUI
-#define OPTION  &kp LALT
-#define CONTROL &kp LCTRL
-#define SHIFT   &kp LSHIFT
+#define COMMAND     &kp LGUI
+#define OPTION      &kp LALT
+#define CONTROL     &kp LCTRL
+#define SHIFT       &kp LSHIFT
 
 // Friendlier volume definitions with some mod-tap mute action
 #define VOLUME_DOWN &mt K_MUTE C_VOL_DN
@@ -178,7 +178,7 @@
         // The secondary layer handles navigation and bluetooth functions
         secondary {
             bindings = <          
-                FORGET_HOST   HOST_1        HOST_2        HOST_3        HOST_4        HOST_5                                        &trans        &trans        &trans        &trans        &trans       &kp DEL
+                FORGET_HOST   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5                                  &trans        &trans        &trans        &trans        &trans       &kp DEL
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &tog 3
