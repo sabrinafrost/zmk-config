@@ -170,7 +170,7 @@
                 &td_escape   &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BACKSPACE
                 &kp TAB      &td_quote     &kp COMMA     &kp DOT       &kp P         &kp Y                                         &kp F         &kp G         &kp C         &td_r         &td_l         &kp BACKSLASH
                 SHIFT        &kp A         &kp O         &kp E         &kp U         &kp I                                         &kp D         &kp H         &kp T         &kp N         &td_s         &kp RETURN
-                SHIFT        &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &none
+                SHIFT        &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &tog 1
                                            CONTROL       OPTION        COMMAND       &kp SPACE     &td_open           &td_close    &td_media     LAUNCHER      VOLUME_DOWN   VOLUME_UP
             >;
         };
@@ -178,10 +178,10 @@
         // The secondary layer handles navigation and bluetooth functions
         secondary {
             bindings = <          
-                FORGET_HOST   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5                                  &trans        &trans        &trans        &trans        &trans       &kp DEL
+                FORGET_HOST   HOST_1        HOST_2        HOST_3        HOST_4        HOST_5                                        &trans        &trans        &trans        &trans        &trans       &kp DEL
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
-                &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &tog 3
+                &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
                                             &trans        &trans        &trans        &trans       &trans             TOGGLE_VCC    &trans        &trans        &trans        &trans
             >;
         };
@@ -192,7 +192,7 @@
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &none         &none         &none         &none         &none        &trans
                 &trans        &kp Q         &kp W         &kp E         &kp R         &kp T                                         &none         &kp KP_N7     &kp KP_N8     &kp KP_N9     &none        &none
                 &trans        &kp A         &kp S         &kp D         &kp F         &kp G                                         &none         &kp KP_N4     &kp KP_N5     &kp KP_N6     &none        &trans
-                &trans        &kp Z         &kp X         &kp C         &kp V         &kp B                                         &none         &kp KP_N1     &kp KP_N2     &kp KP_N3     &none        &tog 3
+                &trans        &kp Z         &kp X         &kp C         &kp V         &kp B                                         &none         &kp KP_N1     &kp KP_N2     &kp KP_N3     &none        &to 0
                                             &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &kp KP_N0     &none
             >;
         };
