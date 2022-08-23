@@ -16,7 +16,7 @@
 #define OPTION      &kp LALT
 #define CONTROL     &kp LCTRL
 #define SHIFT       &kp LSHIFT
-#define HYPER       &kp LSHIFT(LCTRL(LALT(LGUI)))
+#define HYPER       &kp LS(LC(LA(LGUI)))
 
 // Escape when tapped, lock when held
 #define BYEEEE      &mt ESCAPE LG(Q)
