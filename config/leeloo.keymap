@@ -6,6 +6,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define TAPPING_TERM 175
+
 // The launcher key triggers Alfred
 #define ALFRED      &kp LG(SPACE)
 
@@ -24,11 +26,23 @@
  * sensor-bindings = <&inc_dec_kp &none &none>;
  */
 
-// &mt {
-//     tapping-term-ms = <175>;
-// };
-
 / {
+    behaviors {
+        /*
+         * td_media mimics the behaviour of AirPod controls:
+         *  - tap once for play / pause
+         *  - tap twice for next track
+         *  - tap three times for previous track
+         */
+        td_media: tap_dance_media {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MEDIA";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
+        };
+    };
+
     keymap {
 		compatible = "zmk,keymap";
 
