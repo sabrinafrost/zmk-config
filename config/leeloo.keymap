@@ -11,6 +11,10 @@
 // The launcher key triggers Alfred when pressed, and switches layers when held
 #define LAUNCHER    &lt 1 LG(SPACE)
 
+// These keys also switch layers when held to improve ergonomics
+#define LT_LBKT    &lt 1 LG(LBKT)
+#define LT_RBKT    &lt 1 LG(RBKT)
+
 // Friendlier modifier definitions because the OCD gods demand it
 #define COMMAND     &kp LGUI
 #define OPTION      &kp LALT
@@ -53,7 +57,7 @@
                 &kp TAB      &kp APOS      &kp COMMA     &kp DOT       &kp P         &kp Y                                         &kp F         &kp G         &kp C         &kp R         &kp L         &kp BACKSLASH
                 SHIFT        &kp A         &kp O         &kp E         &kp U         &kp I                                         &kp D         &kp H         &kp T         &kp N         &kp S         &kp RETURN
                 SHIFT        &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &sl 1
-                                           CONTROL       OPTION        COMMAND       &kp SPACE     HYPER              &td_media    LAUNCHER      &kp LBKT      &kp RBKT      &trans
+                                           CONTROL       OPTION        COMMAND       &kp SPACE     HYPER              &td_media    LAUNCHER      LT_LBKT       LT_RBKT      &trans
             >;
         };
 
