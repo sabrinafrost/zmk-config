@@ -11,10 +11,6 @@
 // The launcher key triggers Alfred when pressed, and switches layers when held
 #define LAUNCHER    &lt 1 LG(SPACE)
 
-// These keys also switch layers when held to improve ergonomics
-#define LT_LBKT    &lt 1 LBKT
-#define LT_RBKT    &lt 1 RBKT
-
 // Friendlier modifier definitions because the OCD gods demand it
 #define COMMAND     &kp LGUI
 #define OPTION      &kp LALT
@@ -68,7 +64,7 @@
                 &kp LS(TAB)   &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
-                                            &trans        &trans        LT_LBKT       RT_LBKT      &trans             &trans        &trans        &trans        &trans        &trans
+                                            &trans        &trans        &kp LBKT      &kp RBKT     &trans             &trans        &trans        &trans        &trans        &trans
             >;
         };
 
