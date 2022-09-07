@@ -53,19 +53,19 @@
         // The primary layer is configured for Dvorak and the most frequently used shortcuts
         primary {
             bindings = <
-                &kp GRAVE    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BACKSPACE
+                BYEEEE       &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BACKSPACE
                 &kp TAB      &kp APOS      &kp COMMA     &kp DOT       &kp P         &kp Y                                         &kp F         &kp G         &kp C         &kp R         &kp L         &kp BACKSLASH
                 SHIFT        &kp A         &kp O         &kp E         &kp U         &kp I                                         &kp D         &kp H         &kp T         &kp N         &kp S         &kp RETURN
-                SHIFT        &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &sl 1
-                                           CONTROL       OPTION        COMMAND       &kp SPACE     HYPER              &td_media    LAUNCHER      LT_LBKT       LT_RBKT      &trans
+                CONTROL      &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &sl 1
+                                           OPTION        COMMAND       &kp SPACE     LT_LBKT       HYPER              &td_media    LT_RBKT      LAUNCHER       COMMAND       OPTION
             >;
         };
 
         // The secondary layer handles navigation
         secondary {
             bindings = <          
-                BYEEEE        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &kp DEL
-                &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
+                &kp GRAVE     &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &kp DEL
+                &kp LS(TAB)   &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
                                             &trans        &trans        &trans        &trans       &trans             &trans        &trans        &trans        &trans        &trans
