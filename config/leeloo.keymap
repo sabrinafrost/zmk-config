@@ -62,9 +62,9 @@
             bindings = <          
                 &kp GRAVE     &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &kp DEL
                 &kp LS(TAB)   &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
-                &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
+                &kp LBKT      &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &kp RBKT
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
-                                            &trans        &trans        &kp LBKT      &kp RBKT     &trans             &trans        &trans        &trans        &trans        &trans
+                                            &trans        &trans        &trans        &trans       &trans             &trans        &trans        &trans        &trans        &trans
             >;
         };
 
