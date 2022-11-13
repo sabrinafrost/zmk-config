@@ -5,9 +5,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
 
 #define TAPPING_TERM 175
 
@@ -19,26 +16,10 @@
 #define OPTION      &kp LALT
 #define CONTROL     &kp LCTRL
 #define SHIFT       &kp LSHIFT
+#define HYPER       &kp LS(LC(LA(LGUI)))
 
-// Friendlier volume definitions with some mod-tap mute action
-#define VOLUME_DOWN &mt K_MUTE C_VOL_DN
-#define VOLUME_UP   &kp C_VOL_UP
-
-// Friendlier bluetooth function definitions
-#define FORGET_HOST &bt BT_CLR
-#define HOST_1      &bt BT_SEL 0
-#define HOST_2      &bt BT_SEL 1
-#define HOST_3      &bt BT_SEL 2
-#define HOST_4      &bt BT_SEL 3
-#define HOST_5      &bt BT_SEL 4
-
-/*
- * &ext_power EP_TOG will turn the OLEDs off but due to a known issue,
- * they won't come back online without a quick press of the reset buttons
- * See https://github.com/zmkfirmware/zmk/issues/674
- */
-
-#define TOGGLE_VCC &ext_power EP_TOG
+// Escape when tapped, lock when held
+#define BYEEEE      &kp ESCAPE // &mt ESCAPE LG(Q)
 
 /*
  * My board doesn't have encoders, so I've removed this from each keymap:
@@ -60,105 +41,6 @@
             tapping-term-ms = <400>;
             bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
-
-        /*
-         * td_quote adds the backtick / tilde key as a double press
-         * alternative for the quote key
-         */
-        td_quote: tap_dance_quote {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_QUOTE";
-            #binding-cells = <0>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&kp APOSTROPHE>, <&kp GRAVE>;
-        };
-
-        /*
-         * td_open brings programming block symbols into one key:
-         *  - tap once for [ or hold shift for {
-         *  - tap twice for (
-         *  - tap three times for <
-         */
-        td_open: tap_dance_open {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_OPEN";
-            #binding-cells = <0>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
-        };
-
-        /*
-         * td_open brings programming block symbols into one key:
-         *  - tap once for ] or hold shift for }
-         *  - tap twice for )
-         *  - tap three times for >
-         */
-        td_close: tap_dance_close {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CLOSE";
-            #binding-cells = <0>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&kp RIGHT_BRACKET>, <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-        };
-
-        /*
-         * td_r adds the /? key to the position it would be
-         * in on a normal Dvorak keyboard:
-         *  - tap once for r
-         *  - tap twice for /
-         *  - tap three times for ?
-         */
-        td_r: tap_dance_r {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_R";
-            #binding-cells = <0>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&kp R>, <&kp SLASH>, <&kp QUESTION>;
-        };
-
-        /*
-         * td_l adds the =+ key to the position it would be
-         * in on a normal Dvorak keyboard:
-         *  - tap once for l
-         *  - tap twice for =
-         *  - tap three times for +
-         */
-        td_l: tap_dance_l {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_L";
-            #binding-cells = <0>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&kp L>, <&kp EQUAL>, <&kp PLUS>;
-        };
-
-        /*
-         * td_s adds the -_ key to the position it would be
-         * in on a normal Dvorak keyboard:
-         *  - tap once for s
-         *  - tap twice for -
-         *  - tap three times for _
-         */
-        td_s: td_s {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_S";
-            #binding-cells = <0>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&kp S>, <&kp MINUS>, <&kp UNDERSCORE>;
-        };
-
-        /*
-         * td_escape groups escape / locking functions into one key:
-         *  - tap once for escape
-         *  - tap twice to lock the host
-         *  - tap three times to put the host to sleep
-         */
-        td_escape: td_escape {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_ESCAPE";
-            #binding-cells = <0>;
-            tapping-term-ms = <TAPPING_TERM>;
-            bindings = <&kp ESCAPE>, <&kp LG(LC(Q))>, <&kp LG(LA(C_EJECT))>;
-        };
     };
 
     keymap {
@@ -167,22 +49,22 @@
         // The primary layer is configured for Dvorak and the most frequently used shortcuts
         primary {
             bindings = <
-                &td_escape   &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BACKSPACE
-                &kp TAB      &td_quote     &kp COMMA     &kp DOT       &kp P         &kp Y                                         &kp F         &kp G         &kp C         &kp R         &kp L         &kp BACKSLASH
+                BYEEEE       &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BACKSPACE
+                &kp TAB      &kp APOS      &kp COMMA     &kp DOT       &kp P         &kp Y                                         &kp F         &kp G         &kp C         &kp R         &kp L         &kp BACKSLASH
                 SHIFT        &kp A         &kp O         &kp E         &kp U         &kp I                                         &kp D         &kp H         &kp T         &kp N         &kp S         &kp RETURN
-                SHIFT        &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &sl 1
-                                           CONTROL       OPTION        COMMAND       &kp SPACE     &td_open           &td_close    &td_media     LAUNCHER      VOLUME_DOWN   VOLUME_UP
+                CONTROL      &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &sl 1
+                                           &trans        OPTION        COMMAND       &kp SPACE     &kp LBKT           &kp RBKT     &td_media     LAUNCHER      COMMAND       OPTION
             >;
         };
 
-        // The secondary layer handles navigation and bluetooth functions
+        // The secondary layer handles navigation
         secondary {
             bindings = <          
-                FORGET_HOST   HOST_1        HOST_2        HOST_3        HOST_4        HOST_5                                        &trans        &trans        &trans        &trans        &trans       &kp DEL
-                &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
+                &kp GRAVE     &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &kp DEL
+                &kp LS(TAB)   &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &kp UP        &kp SLASH     &kp EQUAL    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &kp MINUS    &trans
                 &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
-                                            &trans        &trans        &trans        &trans       &trans             TOGGLE_VCC    &trans        &trans        &trans        &trans
+                                            &trans        &trans        &trans        &trans       &trans             &trans        &trans        &trans        &trans        &trans
             >;
         };
 
