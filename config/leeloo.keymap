@@ -10,8 +10,8 @@
 
 // Layer names
 #define DVORAK  0
-#define SPECIAL 0
-#define QWERTY  0
+#define SPECIAL 1
+#define QWERTY  2
 
 // The launcher key triggers Alfred when pressed, and switches layers when held
 #define LAUNCHER    &lt SPECIAL LG(SPACE)
