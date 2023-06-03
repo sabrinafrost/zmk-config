@@ -8,8 +8,13 @@
 
 #define TAPPING_TERM 175
 
+// Layer names
+#define DVORAK  0
+#define SPECIAL 0
+#define QWERTY  0
+
 // The launcher key triggers Alfred when pressed, and switches layers when held
-#define LAUNCHER    &lt 1 LG(SPACE)
+#define LAUNCHER    &lt SPECIAL LG(SPACE)
 
 // Friendlier modifier definitions because the OCD gods demand it
 #define COMMAND     &kp LGUI
@@ -52,7 +57,7 @@
                 BYEEEE       &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BACKSPACE
                 &kp TAB      &kp APOS      &kp COMMA     &kp DOT       &kp P         &kp Y                                         &kp F         &kp G         &kp C         &kp R         &kp L         &kp BACKSLASH
                 SHIFT        &kp A         &kp O         &kp E         &kp U         &kp I                                         &kp D         &kp H         &kp T         &kp N         &kp S         &kp RETURN
-                CONTROL      &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &sl 1
+                CONTROL      &kp SEMICOLON &kp Q         &kp J         &kp K         &kp X                                         &kp B         &kp M         &kp W         &kp V         &kp Z         &tog QWERTY
                                            &trans        OPTION        COMMAND       &kp SPACE     &kp LBKT           &kp RBKT     &td_media     LAUNCHER      COMMAND       OPTION
             >;
         };
@@ -68,14 +73,14 @@
             >;
         };
 
-        // The gaming / numpad layer is breaks the board into a dedicated gaming macro pad or numpad
+        // The tertiary layer is configured as a qwerty fallback layer for gaming, VMs, etc.
         gaming_and_numpad {
             bindings = <          
-                &trans        &trans        &trans        &trans        &trans        &trans                                        &none         &none         &none         &none         &none        &trans
-                &trans        &kp Q         &kp W         &kp E         &kp R         &kp T                                         &none         &kp KP_N7     &kp KP_N8     &kp KP_N9     &none        &none
-                &trans        &kp A         &kp S         &kp D         &kp F         &kp G                                         &none         &kp KP_N4     &kp KP_N5     &kp KP_N6     &none        &trans
-                &trans        &kp Z         &kp X         &kp C         &kp V         &kp B                                         &none         &kp KP_N1     &kp KP_N2     &kp KP_N3     &none        &to 0
-                                            &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &kp KP_N0     &none
+                &trans        &trans        &trans        &trans        &trans        &trans                                        &trans        &trans        &trans        &trans        &trans       &trans
+                &trans        &kp Q         &kp W         &kp E         &kp R         &kp T                                         &kp Y         &kp U         &kp I         &kp O         &kp P        &trans
+                &trans        &kp A         &kp S         &kp D         &kp F         &kp G                                         &kp H         &kp J         &kp K         &kp L         &kp SEMI     &trans
+                &trans        &kp Z         &kp X         &kp C         &kp V         &kp B                                         &kp N         &kp M         &kp APOS      &kp DOT       &kp SLASH    &trans
+                                            COMMAND       CONTROL       OPTION        &trans        &trans            &trans        &trans        &trans        &trans        &none
             >;
         };
     };
